@@ -1,18 +1,16 @@
 pipeline {
     agent any
     stages {
-	stage('runtest'){
-		steps{
-			echo "helloo"
-		}
-        stage('Build') {
+        stage('Hello') {
             steps {
-                echo 'Running build automation'
-		sh './gradlew -v'
-                sh './gradlew build --no-daemon'
-                archiveArtifacts artifacts: 'dist/trainSchedule.zip'
+                echo 'Hello World'
             }
         }
-        
+     stage('Build') {
+	steps{
+		echo 'Running build automation'
+		sh './gradlew -v'
+	     }
+	}
     }
 }
